@@ -37,7 +37,7 @@ Describe any challenges encountered while building the app.
 - [ ] (2pt) User can view the app on various device sizes and orientations.
 - [x] (1pt) Run your app on a real device.
 
-<img src="http://imgur.com/a/MxytAEs.gif" width=250><br>
+<img src="http://imgur.com/a/MxytAEs.gif"><br>
 
 ### Notes
 
