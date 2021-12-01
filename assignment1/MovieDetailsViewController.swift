@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MovieDetailsViewController: UIViewController {
     
@@ -23,7 +24,26 @@ class MovieDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(movie["title"] as! String)
+        titleLabel.text = movie["title"] as? String
+        titleLabel.sizeToFit()
+        synopsisLabel.text = movie["overview"] as? String
+        synopsisLabel.sizeToFit()
+        
+        let baseUrl = "https://image.tmdb.org/t/p/w185"
+        
+        let posterPath = movie["poster_path"] as! String
+        
+        let posterUrl = URL(string: baseUrl + posterPath)
+        
+        posterView.af.setImage(withURL: posterUrl!)
+        
+        let baseUrlforBackDrop = "https://image.tmdb.org/t/p/w780"
+        
+        let backDropPath = movie["backdrop_path"] as! String
+        
+        let backDropUrl = URL(string: baseUrlforBackDrop + backDropPath)
+        
+        backdropView.af.setImage(withURL: backDropUrl!)
     }
     
 

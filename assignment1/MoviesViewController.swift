@@ -41,7 +41,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                  
                  self.tableView.reloadData()
                  
-                    print(dataDictionary)
+                    //print(dataDictionary)
                     // TODO: Get the array of movies
                     // TODO: Store the movies in a property to use elsewhere
                     // TODO: Reload your table view data
@@ -66,8 +66,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let synopsis = movie["overview"] as! String
         
         cell.titleLabel.text = title
-        cell.synopsisLabel.text = synopsis
-        
+        cell.synopsisLabel.text = synopsis        
         
         let baseUrl = "https://image.tmdb.org/t/p/w185"
         let posterPath = movie["poster_path"] as! String
