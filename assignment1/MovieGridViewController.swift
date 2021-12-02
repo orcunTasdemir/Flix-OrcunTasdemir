@@ -63,22 +63,16 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieGridCell", for: indexPath) as! MovieGridCell
         
         let movie = movies[indexPath.item]
-        
         let baseUrl = "https://image.tmdb.org/t/p/w185"
         let posterPath = movie["poster_path"] as! String
         
         let posterUrl = URL(string: baseUrl + posterPath)
-        
         cell.posterView.af.setImage(withURL: posterUrl!)
         
         return cell
-        
-        
     }
     
-    
     // MARK: - Navigation
-
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          //Get the new view controller using segue.destination.
@@ -91,8 +85,8 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
          let movie = movies[indexPath.item]
          
          //store and pass the selected movie to the moviedetailsviewcontroller
-         let detailsViewController = segue.destination as! CollectionMovieDetailsViewController
-         detailsViewController.movie = movie
+         let collectionDetailsViewController = segue.destination as! CollectionMovieDetailsViewController
+         collectionDetailsViewController.movie = movie
      }
  }
 

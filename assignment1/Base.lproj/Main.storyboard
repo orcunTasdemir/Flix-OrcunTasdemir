@@ -170,7 +170,7 @@
                                         <size key="customSize" width="194" height="203"/>
                                         <connections>
                                             <outlet property="posterView" destination="nlg-Qk-Efd" id="rvc-cY-zrS"/>
-                                            <segue destination="Zjl-du-aTj" kind="show" id="AwK-EJ-UcM"/>
+                                            <segue destination="Zjl-du-aTj" kind="show" id="KNX-HW-Wwv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTh-xp-wXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2344" y="1123"/>
+            <point key="canvasLocation" x="3291" y="664"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="lDA-yV-ECD">
