@@ -93,8 +93,6 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
         collectionDetailsViewController.movie = movie
         
     }
-    
-
 }
 
 
