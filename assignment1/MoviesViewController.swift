@@ -89,7 +89,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         print("Loading up the details screen!")
         
         //find the selected movie
-        let cell = sender as! UITableViewCell
+        let cell = sender as! MovieCell
         let indexPath = tableView.indexPath(for: cell)!
         let movie = movies[indexPath.row]
         

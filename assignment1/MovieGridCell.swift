@@ -2,7 +2,7 @@
 //  MovieGridCell.swift
 //  assignment1
 //
-//  Created by OrcunTasdemir on 11/30/21.
+//  Created by OrcunTasdemir on 12/2/21.
 //
 
 import UIKit
@@ -10,6 +10,7 @@ import UIKit
 class MovieGridCell: UICollectionViewCell {
     
     
+   
     @IBOutlet weak var posterView: UIImageView!
     
 }
