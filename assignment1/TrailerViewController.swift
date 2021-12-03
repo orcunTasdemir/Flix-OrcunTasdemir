@@ -20,7 +20,7 @@ class TrailerViewController: UIViewController, WKUIDelegate {
         super.viewDidLoad()
         print("passed version: ", trailerUrl)
         // Do any additional setup after loading the view.
-        let myURL = URL(string:"https://www.apple.com")
+        let myURL = trailerUrl
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         

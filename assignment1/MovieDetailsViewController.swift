@@ -30,6 +30,28 @@ class MovieDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let movieId = movie["id"] as! Int
+        let movieIdS = String(movieId)
+        let urlBegin = "https://api.themoviedb.org/3/movie/"
+        let urlEnd = "/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US"
+        let url = URL(string: urlBegin + movieIdS + urlEnd)!
+        print("url: ", url)
+        
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task = session.dataTask(with: request) { [self] (data, response, error) in
+             // This will run when the network request returns
+             if let error = error {
+                    print(error.localizedDescription)
+             } else if let data = data {
+                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                 
+                 self.getVideos = dataDictionary["results"] as! [[String:Any]]
+                 print(getVideos)
+             }
+        }
+        task.resume()
 
         // Do any additional setup after loading the view.
         titleLabel.text = movie["title"] as? String
@@ -64,38 +86,18 @@ class MovieDetailsViewController: UIViewController {
             //Pass the selected object to the new view controller.
             print("Loading up the trailers screen!")
             
-            let movieId = movie["id"] as! Int
-            let movieIdS = String(movieId)
-            let urlBegin = "https://api.themoviedb.org/3/movie/"
-            let urlEnd = "/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US"
-            let url = URL(string: urlBegin + movieIdS + urlEnd)!
-            print("url: ", url)
+            let getVideo = getVideos[0]
+            print("get video: ", getVideo)
+            let key = getVideo["key"] as! String
+            print("key: ", key)
+            let youtubeUrl = "https://www.youtube.com/watch?v="
+
+            trailerUrl = URL(string: youtubeUrl + key)
+            print(trailerUrl)
+
+            let trailerViewController = segue.destination as! TrailerViewController
+            trailerViewController.trailerUrl = trailerUrl
+            print("passing it here: ", trailerUrl)
             
-            let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-            let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-            let task = session.dataTask(with: request) { [self] (data, response, error) in
-                 // This will run when the network request returns
-                 if let error = error {
-                        print(error.localizedDescription)
-                 } else if let data = data {
-                        let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                     
-                     self.getVideos = dataDictionary["results"] as! [[String:Any]]
-                     print(getVideos)
-                     let getVideo = getVideos[0]
-                     print("get video: ", getVideo)
-                     let key = getVideo["key"] as! String
-                     print("key: ", key)
-                     let youtubeUrl = "https://www.youtube.com/watch?v="
-         
-                     trailerUrl = URL(string: youtubeUrl + key)
-                     print(trailerUrl)
-         
-                     let trailerViewController = segue.destination as! TrailerViewController
-                     trailerViewController.trailerUrl = trailerUrl
-                     print("passing it here: ", trailerUrl)
-                 }
-            }
-            task.resume()
-        }
     }
+}
