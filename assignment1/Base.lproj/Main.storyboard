@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="393"/>
+            <point key="canvasLocation" x="1348" y="368"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="BpO-8d-Mcy">
@@ -121,22 +121,22 @@
                 <tapGestureRecognizer id="U1q-u1-fJf">
                     <connections>
                         <action selector="posterTapAction:" destination="HAi-hE-OCp" id="MUJ-Jw-PPk"/>
-                        <segue destination="4th-6b-a6C" kind="presentation" id="Sro-jH-jve"/>
+                        <segue destination="QF6-Ja-vFu" kind="show" id="VPe-tT-VcQ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1348" y="1229"/>
+            <point key="canvasLocation" x="1674" y="1094"/>
         </scene>
         <!--Trailer View Controller-->
-        <scene sceneID="Gwd-wI-cV3">
+        <scene sceneID="Za7-J4-3r3">
             <objects>
-                <viewController id="4th-6b-a6C" customClass="TrailerViewController" customModule="assignment1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qxu-KE-Mqo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <viewController id="QF6-Ja-vFu" customClass="TrailerViewController" customModule="assignment1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8EH-Qc-Rfu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7i-MK-wqg">
-                                <rect key="frame" x="20" y="78" width="374" height="209"/>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRH-pd-TQH">
+                                <rect key="frame" x="20" y="87" width="374" height="229"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -145,16 +145,14 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="x98-dz-MCU"/>
+                        <viewLayoutGuide key="safeArea" id="gQo-jD-gAB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <outlet property="trailerView" destination="R7i-MK-wqg" id="zml-R8-f0N"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="FtF-P7-lWu"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M1q-Ek-8If" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Bl-qH-BvA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2151" y="1912"/>
+            <point key="canvasLocation" x="2526" y="1094"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="L4F-9e-OtJ">
@@ -172,7 +170,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1D-Zw-T9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1349" y="-1047"/>
+            <point key="canvasLocation" x="1674" y="-1037"/>
         </scene>
         <!--Movie Grid View Controller-->
         <scene sceneID="YhW-eQ-xr1">
@@ -225,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8J-pk-VML" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2279.7101449275365" y="391.74107142857139"/>
+            <point key="canvasLocation" x="2013" y="368"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="lDA-yV-ECD">
@@ -244,7 +242,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oc6-CX-C53" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="-308"/>
+            <point key="canvasLocation" x="1348" y="-340"/>
         </scene>
         <!--SuperHero-->
         <scene sceneID="HEp-GO-d12">
@@ -263,11 +261,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hq7-R8-927" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2279.7101449275365" y="-307.36607142857139"/>
+            <point key="canvasLocation" x="2014" y="-340"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="i87-Kx-6Hr"/>
+        <segue reference="5zQ-5y-ipe"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
