@@ -86,7 +86,25 @@ class MovieDetailsViewController: UIViewController {
             //Pass the selected object to the new view controller.
             print("Loading up the trailers screen!")
             
-            let getVideo = getVideos[0]
+            var i = 0
+            var length = getVideos.count
+            while(length >= 0){
+                if(getVideos[i]["type"] as! String == "Trailer"){
+                    break
+                }
+                else if(length == 0){
+                    i = 0
+                    break
+                }
+                else
+                {
+                    i = i + 1
+                }
+                length = length - 1
+            }
+            
+            let getVideo = getVideos[i]
+            print("this is i: ", i)
             print("get video: ", getVideo)
             let key = getVideo["key"] as! String
             print("key: ", key)
